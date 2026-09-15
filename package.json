@@ -1,0 +1,30 @@
+{
+  "name": "terabithia-agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@coinbase/coinbase-sdk": "^0.25.0",
+    "@coinbase/x402": "^2.1.0",
+    "chalk": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "openai": "^7.9.0",
+    "ora": "^9.4.1",
+    "viem": "^2.56.1",
+    "x402-express": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.4.1",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3"
+  }
+}

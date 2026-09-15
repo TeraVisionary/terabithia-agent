@@ -1,0 +1,10 @@
+[
+  {
+    "nodeName": "Terabithia Multi-Vertical Warp-Drive Node",
+    "operatorVault": "0x20734FBa4c8436f87eC70388016a246f8C89e7f2",
+    "activeIngress": "http://localhost:3001",
+    "manifestUrl": "http://localhost:3001/.well-known/agent-manifest.json",
+    "network": "base",
+    "chainId": 8453
+  }
+]

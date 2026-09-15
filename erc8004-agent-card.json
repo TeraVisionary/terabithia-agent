@@ -1,0 +1,41 @@
+{
+  "$schema": "https://ercs.ethereum.org/ERCS/erc-8004",
+  "type": "AutonomousSyntheticCommerceAgent",
+  "version": "1.1.0",
+  "identity": {
+    "name": "TERABITHIA WARP-DRIVE COMMERCE & ORACLE",
+    "symbol": "TERABITHIA",
+    "vaultAddress": "0xEf6Ba235fBEc45DD62Ae6911356730417242eE5e",
+    "facilitatorAddress": "0x65C558726CE8Ce17C173d7308efFc9Bb4be3b1f4",
+    "publicIngress": "https://terabithia-mesh.loca.lt"
+  },
+  "services": [
+    {
+      "id": "synthetic-store-catalog",
+      "type": "x402-Commerce-Catalog",
+      "name": "Autonomous Machine Goods & Algorithmic Deliverables Catalog",
+      "endpoint": "https://terabithia-mesh.loca.lt/api/store/catalog",
+      "method": "GET",
+      "protocol": "open-catalog"
+    },
+    {
+      "id": "tera-alpha-001",
+      "type": "x402-Commerce-Product",
+      "name": "Autonomous High-Yield DeFi Arbitrage Stream",
+      "endpoint": "https://terabithia-mesh.loca.lt/api/store/products/tera-alpha-001",
+      "method": "GET",
+      "protocol": "x402",
+      "x402Terms": {
+        "scheme": "exact",
+        "network": "base-sepolia",
+        "chainId": 84532,
+        "price": "$0.05",
+        "maxAmountRequired": "50000",
+        "asset": "0x036CbD53842c5426634e7929541eC2318f3dCF7e",
+        "payTo": "0xEf6Ba235fBEc45DD62Ae6911356730417242eE5e"
+      }
+    }
+  ],
+  "settlementInvariant": "80% cbBTC Cold Storage / 20% USDC L2 Gas Buffer",
+  "timestamp": "2026-09-13T16:20:04.012Z"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "sku": "TERA-ALPHA-001",
+    "priceUSDC": "0.05",
+    "atomicUnits": "50000",
+    "surgeActive": false
+  },
+  {
+    "sku": "TERA-SENTIMENT-001",
+    "priceUSDC": "0.05",
+    "atomicUnits": "50000",
+    "surgeActive": false
+  },
+  {
+    "sku": "TERA-GAS-OPT",
+    "priceUSDC": "0.15",
+    "atomicUnits": "150000",
+    "surgeActive": false
+  },
+  {
+    "sku": "TERA-ZK-AUDIT-001",
+    "priceUSDC": "0.20",
+    "atomicUnits": "200000",
+    "surgeActive": false
+  },
+  {
+    "sku": "TERA-CODE-GEN",
+    "priceUSDC": "0.10",
+    "atomicUnits": "100000",
+    "surgeActive": false
+  }
+]
