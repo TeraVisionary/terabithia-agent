@@ -8,8 +8,10 @@
     "strict": false,
     "noImplicitAny": false,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true
+    "noEmitOnError": false,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["./*.ts", "./**/*.ts"],
   "exclude": ["node_modules", "dist"]
