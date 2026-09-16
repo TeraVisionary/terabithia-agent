@@ -2,10 +2,10 @@
   "name": "terabithia-agent",
   "version": "1.0.0",
   "description": "Terabithia Warp-Drive AI System",
-  "main": "index.ts",
+  "main": "server.ts",
   "scripts": {
     "build": "echo 'Build script executed successfully'",
-    "start": "npx tsx index.ts"
+    "start": "npx tsx server.ts"
   },
   "dependencies": {}
 }
