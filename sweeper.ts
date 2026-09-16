@@ -180,11 +180,11 @@ async function execute8020Swap(amountInUSDC: bigint) {
 async function checkAndSweep() {
   try {
     const rawBalance = await publicClient.readContract({
-      address: USDC_ADDRESS,
-      abi: ERC20_ABI,
-      functionName: "balanceOf",
-      args: [vaultAccount.address],
-    });
+  address: USDC_ADDRESS,
+  abi: ERC20_ABI,
+  functionName: "balanceOf",
+  args: [vaultAccount.address],
+} as any);
 
     const balanceUSDC = parseFloat(formatUnits(rawBalance, 6));
     const now = new Date().toLocaleTimeString();
