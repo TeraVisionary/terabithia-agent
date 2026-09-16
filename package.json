@@ -1,20 +1,17 @@
 {
   "name": "terabithia-agent",
-  "version": "1.0.0",
-  "description": "Terabithia Warp-Drive AI System",
+  "version": "2.4.0",
+  "description": "Autonomous multi-chain machine-economy swarm and x402 gateway",
   "main": "server.ts",
   "scripts": {
-    "build": "echo 'Build script executed successfully'",
-    "start": "npx tsx server.ts"
+    "build": "echo 'Build synchronized'",
+    "start": "npx tsx server.ts & npx tsx cross_chain_telemetry.ts"
   },
   "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "x402-express": "^1.2.0"
+    "dotenv": "^16.4.5",
+    "viem": "^2.21.0"
   },
   "devDependencies": {
-    "tsx": "^4.23.13",
-    "typescript": "^7.0.2"
+    "tsx": "^4.19.0"
   }
 }
