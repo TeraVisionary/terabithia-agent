@@ -12,8 +12,8 @@ const NODE_URL = process.env.RENDER_EXTERNAL_URL ||
 `http://localhost:${PORT}`;
 const federator = new SwarmFederator('terabithia-node-1', NODE_URL);
 
-// Configure x402 payment gate (set your sovereign Base L2 wallet address 
-here)
+// Configure x402 payment gate (e.g., $0.001 USDC per query routed to your 
+sovereign wallet)
 const sovereignWallet = process.env.SOVEREIGN_WALLET_ADDRESS || 
 '0xYourBaseWalletAddressHere';
 const x402Gate = createX402PaymentGate({
@@ -22,11 +22,15 @@ const x402Gate = createX402PaymentGate({
   network: 'base-mainnet'
 });
 
-// Open Discovery Routes (Free for network bootstrapping)
+// ==========================================
+// OPEN DISCOVERY ROUTES (Free Mesh Handshake)
+// ==========================================
+
 app.post('/api/warp/federation/ping', (req: Request, res: Response) => {
   const { id, url, capabilities } = req.body;
   if (!id || !url) return res.status(400).json({ error: 'Invalid peer 
 payload' });
+  
   federator.registerPeer({ id, url, capabilities: capabilities || [], 
 lastSeen: Date.now() });
   return res.status(200).json({ status: 'ACK', activePeers: 
@@ -38,7 +42,11 @@ app.get('/api/warp/federation/peers', (req: Request, res: Response) => {
 federator.getActivePeers() });
 });
 
-// Monetized Telemetry Endpoint (Gated by x402)
+// ==========================================
+// MONETIZED X402 A2A INTELLIGENCE ENDPOINTS
+// ==========================================
+
+// Premium Telemetry & Deep Synthesis (Gated by x402)
 app.get('/api/warp/telemetry', x402Gate, (req: Request, res: Response) => 
 {
   return res.json({
