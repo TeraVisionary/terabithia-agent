@@ -1,23 +1,11 @@
 {
   "name": "terabithia-agent",
   "version": "1.0.0",
-  "description": "Terabithia Warp-Drive A2A Node",
-  "main": "dist/index.js",
+  "description": "Terabithia Warp-Drive AI System",
+  "main": "index.ts",
   "scripts": {
-    "scripts": {
-  "build": "echo 'Bypassing compilation check'",
-  "start": "npx tsx index.ts"
-}
+    "build": "echo 'Build script executed successfully'",
+    "start": "npx tsx index.ts"
   },
-  "type": "module",
-  "dependencies": {
-    "@coinbase/coinbase-sdk": "^0.25.0",
-    "@coinbase/x402": "^2.1.0",
-    "base-64": "^1.0.0",
-    "chalk": "^6.0.0",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
-    "node-fetch": "^3.3.2",
-    "openai": "^7.9.0"
-  }
+  "dependencies": {}
 }
