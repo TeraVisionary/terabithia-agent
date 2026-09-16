@@ -11,9 +11,11 @@
   "dependencies": {
     "@coinbase/coinbase-sdk": "^0.25.0",
     "@coinbase/x402": "^2.1.0",
+    "base-64": "^1.0.0",
     "chalk": "^6.0.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "node-fetch": "^3.3.2",
     "openai": "^7.9.0"
   }
 }
