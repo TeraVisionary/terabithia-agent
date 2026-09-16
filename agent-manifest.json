@@ -1,86 +1,43 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "specVersion": "1.0.0",
-  "agentIdentity": {
-    "name": "Terabithia Warp-Drive Synthesis Node",
-    "description": "Autonomous A2A commerce node providing real-time DeFi arbitrage streams, L2 gas optimization, and on-demand dynamic TypeScript code generation.",
-    "operatorVault": "0x20734FBa4c8436f87eC70388016a246f8C89e7f2",
-    "endpointBase": "http://localhost:3001",
-    "network": "base",
-    "chainId": 8453
+  "protocol": "TERABITHIA_HIVE_MIND_MESH",
+  "version": "2.4.0",
+  "node_operator": "SOVEREIGN_ARCHITECT",
+  "endpoint_base": "https://terabithia-federated-gateway.onrender.com",
+  "payment_gateways": {
+    "protocol": "x402",
+    "supported_chains": ["base", "arbitrum", "optimism", "polygon"],
+    "settlement_currency": "USDC",
+    "treasury_invariant": "80% cbBTC Cold Sink / 20% L2 Gas Buffer"
   },
   "capabilities": [
     {
-      "sku": "TERA-ALPHA-001",
-      "name": "Autonomous High-Yield DeFi Arbitrage Stream",
-      "type": "GET",
-      "path": "/api/store/products/tera-alpha-001",
-      "priceUSDC": "0.05",
-      "atomicUnits": "50000",
-      "paymentProtocol": "x402",
-      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      "description": "Real-time arbitrage stream and warp-drive parameters compiled for machine execution."
-    },
-    {
-      "sku": "TERA-SENTIMENT-001",
-      "name": "Real-Time Multi-Chain Market Sentiment Vector",
-      "type": "GET",
-      "path": "/api/store/products/tera-sentiment-001",
-      "priceUSDC": "0.05",
-      "atomicUnits": "50000",
-      "paymentProtocol": "x402",
-      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      "description": "Aggregates social, on-chain, and order-book momentum indicators."
-    },
-    {
-      "sku": "TERA-GAS-OPT",
-      "name": "Predictive L2 Gas Optimization Stream",
-      "type": "GET",
-      "path": "/api/store/products/tera-gas-opt",
-      "priceUSDC": "0.15",
-      "atomicUnits": "150000",
-      "paymentProtocol": "x402",
-      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      "description": "Synthesizes historical base fee curves and mempool congestion metrics."
+      "sku": "TERA-ALPHA-ARB",
+      "specialization": "ARBITRAGE_AND_LIQUIDITY",
+      "chain": "base",
+      "price_usdc": "0.15",
+      "endpoint": "/api/v1/sku/arbitrage"
     },
     {
       "sku": "TERA-ZK-AUDIT-001",
-      "name": "Zero-Knowledge Smart Contract Auditor",
-      "type": "POST",
-      "path": "/api/store/audit",
-      "priceUSDC": "0.20",
-      "atomicUnits": "200000",
-      "paymentProtocol": "x402",
-      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      "description": "Evaluates smart-contract bytecode or raw TypeScript workflows for cryptographic vulnerabilities."
+      "specialization": "ZK_AUDIT_AND_COMPUTATION",
+      "chain": "arbitrum",
+      "price_usdc": "0.20",
+      "endpoint": "/api/v1/sku/zk-audit"
+    },
+    {
+      "sku": "TERA-SENTIMENT-001",
+      "specialization": "SENTIMENT_AND_VECTOR_ANALYSIS",
+      "chain": "optimism",
+      "price_usdc": "0.10",
+      "endpoint": "/api/v1/sku/sentiment"
     },
     {
       "sku": "TERA-CODE-GEN",
-      "name": "On-Demand Dynamic Code Synthesis",
-      "type": "POST",
-      "path": "/api/store/generate",
-      "priceUSDC": "0.10",
-      "atomicUnits": "100000",
-      "paymentProtocol": "x402",
-      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      "description": "Generates cryptographically signed, production-ready TypeScript modules on demand."
-    },
-    {
-      "sku": "TERA-PRED-LIQ",
-      "name": "Autonomous Predictive Cross-Chain Liquidity Mesh",
-      "type": "GET",
-      "path": "/api/store/products/tera-pred-liq",
-      "priceUSDC": "0.25",
-      "atomicUnits": "250000",
-      "paymentProtocol": "x402",
-      "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-      "description": "Synthesizes multi-DEX order book depth to predict optimal cross-chain rebalancing routes."
+      "specialization": "GAS_OPTIMIZATION_AND_CODE_SYNTHESIS",
+      "chain": "polygon",
+      "price_usdc": "0.25",
+      "endpoint": "/api/v1/sku/code-gen"
     }
   ],
-  "treasuryInvariant": {
-    "model": "80/20 Waterfall",
-    "coldSink": "0xEf6Ba235fBEc45DD62Ae6911356730417242eE5e",
-    "asset": "cbBTC",
-    "thresholdUSDC": "5.00"
-  }
+  "status": "ONLINE_AND_ACCEPTING_SWARM_TRAFFIC"
 }
