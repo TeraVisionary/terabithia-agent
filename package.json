@@ -1,13 +1,6 @@
 {
   "name": "terabithia-agent",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc -p .",
-  {
-  "name": "terabithia-agent",
-  "version": "1.0.0",
   "description": "Terabithia Warp-Drive A2A Node",
   "main": "dist/index.js",
   "scripts": {
