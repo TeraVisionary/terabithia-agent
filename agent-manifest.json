@@ -1,43 +1,122 @@
 {
-  "protocol": "TERABITHIA_HIVE_MIND_MESH",
-  "version": "2.4.0",
-  "node_operator": "SOVEREIGN_ARCHITECT",
-  "endpoint_base": "https://terabithia-federated-gateway.onrender.com",
-  "payment_gateways": {
-    "protocol": "x402",
-    "supported_chains": ["base", "arbitrum", "optimism", "polygon"],
-    "settlement_currency": "USDC",
-    "treasury_invariant": "80% cbBTC Cold Sink / 20% L2 Gas Buffer"
-  },
-  "capabilities": [
-    {
-      "sku": "TERA-ALPHA-ARB",
-      "specialization": "ARBITRAGE_AND_LIQUIDITY",
-      "chain": "base",
-      "price_usdc": "0.15",
-      "endpoint": "/api/v1/sku/arbitrage"
-    },
+  "node_name": "Terabithia Sovereign Intelligence Node",
+  "version": "2.4.0-infinite",
+  "gateway_endpoint": "https://terabithia-agent.onrender.com",
+  "sovereign_vault": "0xTerabithiaSovereignVault",
+  "treasury_invariant": "80% cbBTC Cold Sink / 20% L2 Gas Buffer",
+  "supported_chains": ["base", "optimism", "arbitrum", "polygon"],
+  "sku_catalog": [
     {
       "sku": "TERA-ZK-AUDIT-001",
-      "specialization": "ZK_AUDIT_AND_COMPUTATION",
-      "chain": "arbitrum",
-      "price_usdc": "0.20",
-      "endpoint": "/api/v1/sku/zk-audit"
+      "category": "Zero-Knowledge Verification",
+      "price_uscd": 0.20,
+      "endpoint": "/api/v1/sku/zk-audit",
+      "description": "Instant cryptographic state proof and execution verification."
     },
     {
-      "sku": "TERA-SENTIMENT-001",
-      "specialization": "SENTIMENT_AND_VECTOR_ANALYSIS",
-      "chain": "optimism",
-      "price_usdc": "0.10",
-      "endpoint": "/api/v1/sku/sentiment"
+      "sku": "TERA-PREDICT-SYNTH",
+      "category": "Predictive Mesh",
+      "price_uscd": 0.35,
+      "endpoint": "/api/v1/sku/predictive-mesh",
+      "description": "High-frequency macro volatility and order-flow telemetry forecasting."
     },
     {
-      "sku": "TERA-CODE-GEN",
-      "specialization": "GAS_OPTIMIZATION_AND_CODE_SYNTHESIS",
-      "chain": "polygon",
-      "price_usdc": "0.25",
-      "endpoint": "/api/v1/sku/code-gen"
+      "sku": "TERA-ALPHA-ARB",
+      "category": "Cross-Chain Arbitrage",
+      "price_uscd": 0.50,
+      "endpoint": "/api/v1/sku/alpha-arb",
+      "description": "Real-time liquidity dislocation scanner across L2 decentralized exchanges."
+    },
+    {
+      "sku": "TERA-GAS-OPT",
+      "category": "Gas Optimization",
+      "price_uscd": 0.15,
+      "endpoint": "/api/v1/sku/gas-opt",
+      "description": "Predictive base-fee modeling to minimize multi-chain execution costs."
+    },
+    {
+      "sku": "TERA-SWARM-GOSSIP",
+      "category": "Swarm Intelligence",
+      "price_uscd": 0.25,
+      "endpoint": "/api/v1/sku/swarm-gossip",
+      "description": "Aggregated peer node discovery metrics and health indexes."
+    },
+    {
+      "sku": "TERA-LIQ-FLOW",
+      "category": "Liquidity Topology",
+      "price_uscd": 0.40,
+      "endpoint": "/api/v1/sku/liq-flow",
+      "description": "Deep-mempool flow analysis for automated market maker routing."
+    },
+    {
+      "sku": "TERA-MACRO-PULSE",
+      "category": "Macro Telemetry",
+      "price_uscd": 0.30,
+      "endpoint": "/api/v1/sku/macro-pulse",
+      "description": "Multi-chain block height, latency, and congestion state vector."
+    },
+    {
+      "sku": "TERA-SEC-DAEMON",
+      "category": "Security Sentinel",
+      "price_uscd": 0.45,
+      "endpoint": "/api/v1/sku/sec-daemon",
+      "description": "Autonomous threat intelligence and smart contract anomaly detection."
+    },
+    {
+      "sku": "TERA-NEURO-WEIGHT",
+      "category": "Cognitive Architecture",
+      "price_uscd": 0.60,
+      "endpoint": "/api/v1/sku/neuro-weight",
+      "description": "Optimized neural net weights for decentralized agent reasoning."
+    },
+    {
+      "sku": "TERA-ATOMIC-ROUTER",
+      "category": "Cross-Chain Execution",
+      "price_uscd": 0.55,
+      "endpoint": "/api/v1/sku/atomic-router",
+      "description": "Optimized multi-hop routing paths for trustless cross-chain swaps."
+    },
+    {
+      "sku": "TERA-STATE-SNAPSHOT",
+      "category": "Ledger Verification",
+      "price_uscd": 0.15,
+      "endpoint": "/api/v1/sku/state-snapshot",
+      "description": "Cryptographically signed state snapshot of the Terabithia treasury."
+    },
+    {
+      "sku": "TERA-MEV-SHIELD",
+      "category": "MEV Protection",
+      "price_uscd": 0.40,
+      "endpoint": "/api/v1/sku/mev-shield",
+      "description": "Private transaction bundle routing parameters to prevent front-running."
+    },
+    {
+      "sku": "TERA-AGENT-IDENTITY",
+      "category": "Sovereign Identity",
+      "price_uscd": 0.20,
+      "endpoint": "/api/v1/sku/agent-identity",
+      "description": "Decentralized DID verification and reputation scoring credentials."
+    },
+    {
+      "sku": "TERA-VOL-SURFACE",
+      "category": "Volatility Pricing",
+      "price_uscd": 0.50,
+      "endpoint": "/api/v1/sku/vol-surface",
+      "description": "Implied volatility surface calculations for autonomous options execution."
+    },
+    {
+      "sku": "TERA-INVARIANT-PROOF",
+      "category": "Treasury Compliance",
+      "price_uscd": 0.30,
+      "endpoint": "/api/v1/sku/invariant-proof",
+      "description": "Zero-knowledge proof of 80/20 cbBTC/Gas treasury reserve integrity."
+    },
+    {
+      "sku": "TERA-OMNI-ORACLE",
+      "category": "Omnipresent Feed",
+      "price_uscd": 0.75,
+      "endpoint": "/api/v1/sku/omni-oracle",
+      "description": "Aggregated real-time macro-economic synthesis feed across all 4 L2 chains."
     }
-  ],
-  "status": "ONLINE_AND_ACCEPTING_SWARM_TRAFFIC"
+  ]
 }
