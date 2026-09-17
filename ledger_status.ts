@@ -7,13 +7,24 @@ function printLedgerAudit() {
   console.log(`[TERABITHIA LEDGER INSPECTOR] ON-DEMAND AUDIT`);
   console.log(`==================================================`);
 
+  let ledger;
   if (!fs.existsSync(LEDGER_FILE)) {
-    console.log(`Status: Ledger file not found. Awaiting first transaction cycle.`);
-    return;
+    // Initialize default structure if missing
+    ledger = {
+      vault_address: "0xTerabithiaSovereignVault",
+      invariant: "80% cbBTC Cold Sink / 20% L2 Gas Buffer",
+      total_volume_usdc: 0.00,
+      total_cold_sink_cbbtc: 0.00,
+      total_gas_buffer_l2: 0.00,
+      transactions: []
+    };
+    fs.writeFileSync(LEDGER_FILE, JSON.stringify(ledger, null, 2));
+    console.log(`Status: Initialized fresh sovereign ledger state.`);
+  } else {
+    const rawData = fs.readFileSync(LEDGER_FILE, 'utf8');
+    ledger = JSON.parse(rawData);
+    console.log(`Status: Ledger active and synchronized.`);
   }
-
-  const rawData = fs.readFileSync(LEDGER_FILE, 'utf8');
-  const ledger = JSON.parse(rawData);
 
   console.log(`  -> Sovereign Vault : ${ledger.vault_address}`);
   console.log(`  -> Invariant Rule  : ${ledger.invariant}`);
@@ -28,6 +39,8 @@ function printLedgerAudit() {
     ledger.transactions.slice(-3).forEach((tx: any, idx: number) => {
       console.log(`  [${idx + 1}] ${tx.timestamp} | ${tx.sku} | ${tx.chain} | $${tx.amount_usdc} USDC`);
     });
+  } else {
+    console.log(`  -> Awaiting first live transaction settlement.`);
   }
   console.log(`==================================================\n`);
 }
