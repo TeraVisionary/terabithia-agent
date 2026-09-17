@@ -1,14 +1,15 @@
 {
   "name": "terabithia-agent",
-  "version": "2.6.0",
-  "description": "Autonomous multi-chain machine-economy swarm with x402 gateway and registry seeder",
+  "version": "2.7.0",
+  "description": "Autonomous multi-chain machine-economy node with production x402 mainnet settlement",
   "type": "module",
   "main": "server.ts",
   "scripts": {
-    "build": "echo 'Multi-process topology locked'",
+    "build": "echo 'Production multi-process topology locked'",
     "start": "npx tsx server.ts & npx tsx cross_chain_telemetry.ts & npx tsx registry_crawler.ts"
   },
   "dependencies": {
+    "@coinbase/cdp-sdk": "^0.1.0",
     "@types/express": "^4.17.21",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
