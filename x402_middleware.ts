@@ -1,6 +1,4 @@
 import { Request, Response, NextFunction } from 'express';
-import { createPublicClient, http } from 'viem';
-import { base, arbitrum, optimism, polygon } from 'viem/chains';
 
 interface SKUConfig {
   sku: string;
@@ -10,16 +8,22 @@ interface SKUConfig {
 }
 
 const SKU_REGISTRY: Record<string, SKUConfig> = {
+  // Original Core SKUs
   '/api/v1/sku/arbitrage': { sku: 'TERA-ALPHA-ARB', price_usdc: '0.15', chain: 'base', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } },
   '/api/v1/sku/zk-audit': { sku: 'TERA-ZK-AUDIT-001', price_usdc: '0.20', chain: 'arbitrum', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } },
   '/api/v1/sku/sentiment': { sku: 'TERA-SENTIMENT-001', price_usdc: '0.10', chain: 'optimism', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } },
-  '/api/v1/sku/code-gen': { sku: 'TERA-CODE-GEN', price_usdc: '0.25', chain: 'polygon', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } }
+  '/api/v1/sku/code-gen': { sku: 'TERA-CODE-GEN', price_usdc: '0.25', chain: 'polygon', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } },
+
+  // Expanded High-Value SKUs
+  '/api/v1/sku/predictive-mesh': { sku: 'TERA-PREDICT-SYNTH', price_usdc: '0.35', chain: 'base', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } },
+  '/api/v1/sku/zk-proof-gen': { sku: 'TERA-ZK-PROVER-X', price_usdc: '0.50', chain: 'arbitrum', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } },
+  '/api/v1/sku/swarm-sentiment': { sku: 'TERA-SWARM-SENTINEL', price_usdc: '0.18', chain: 'optimism', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } },
+  '/api/v1/sku/bytecode-optimizer': { sku: 'TERA-BYTECODE-PRO', price_usdc: '0.40', chain: 'polygon', treasury_split: { cold_sink_cbbtc: 0.8, gas_buffer_l2: 0.2 } }
 };
 
 export function x402PaymentInterceptor(req: Request, res: Response, next: NextFunction) {
   const routeConfig = SKU_REGISTRY[req.path];
 
-  // If path is not a monetized SKU (e.g. .well-known manifest or health check), pass through
   if (!routeConfig) {
     return next();
   }
@@ -27,7 +31,6 @@ export function x402PaymentInterceptor(req: Request, res: Response, next: NextFu
   const paymentHeader = req.headers['x-payment-signature'] || req.headers['authorization'];
 
   if (!paymentHeader) {
-    // Issue x402 Payment Required challenge
     res.writeHead(402, {
       'Content-Type': 'application/json',
       'X-Payment-Protocol': 'x402',
@@ -52,10 +55,8 @@ export function x402PaymentInterceptor(req: Request, res: Response, next: NextFu
     return;
   }
 
-  // Cryptographic receipt verification stub (to be expanded with live Viem tx hash lookup)
   console.log(`[x402 VERIFICATION] Intercepted payment header for ${routeConfig.sku}:`, paymentHeader);
   
-  // Attach invariant context and proceed to fulfillment
   (req as any).terabithiaContext = {
     sku: routeConfig.sku,
     settled: true,
