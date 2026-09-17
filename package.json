@@ -1,12 +1,12 @@
 {
   "name": "terabithia-agent",
-  "version": "2.9.0",
-  "description": "Autonomous multi-chain machine-economy node with automated treasury ledger reconciliation",
+  "version": "2.10.0",
+  "description": "Autonomous multi-chain machine-economy node with real-time swarm transaction monitoring",
   "type": "module",
   "main": "server.ts",
   "scripts": {
-    "build": "echo 'Treasury topology locked'",
-    "start": "npx tsx server.ts & npx tsx cross_chain_telemetry.ts & npx tsx gossip_crawler.ts & npx tsx treasury_ledger.ts"
+    "build": "echo 'Monitor topology locked'",
+    "start": "npx tsx server.ts & npx tsx cross_chain_telemetry.ts & npx tsx gossip_crawler.ts & npx tsx treasury_ledger.ts & npx tsx swarm_monitor.ts"
   },
   "dependencies": {
     "@types/express": "^4.17.21",
